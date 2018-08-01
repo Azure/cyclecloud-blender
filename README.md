@@ -97,12 +97,12 @@ To import the cluster:
 
  2. Switch to the Blender directory.
 
- 3. Run ``cyclecloud import_template sge-blender -f templates/sge-blender.txt``.
+ 3. Run ``cyclecloud import_template sge-blender -f templates/blender.txt``.
     The expected output looks like this:
     
     ``` bash
     
-    $ cyclecloud import_template SGE-Blender -f templates/sge-blender.txt
+    $ cyclecloud import_template SGE-Blender -f templates/blender.txt
     Importing template SGE-Blender....
     ------------------------
     SGE-Blender : *template*
