@@ -8,6 +8,7 @@ set -e
 if [ -n "$(command -v yum)" ]; then
     yum groupinstall -y "X Window System"
     yum install -y unzip
+    yum install -y mesa-libGLU
 else
     apt-get install -y xorg unzip
 fi
