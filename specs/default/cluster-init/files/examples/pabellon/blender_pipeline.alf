@@ -11,6 +11,6 @@ Job -title {Pabellon} -subtasks {
 
 
     } -cmds {
-        RemoteCmd {/usr/bin/ffmpeg -r 60 -f image2 -s 640x480 -i /data/pabellon/images/frame_%04d.png -vcodec libx264 -crf 25  -pix_fmt yuv420p /data/pabellon/pabellon.mp4} -service {PixarRender}
+        RemoteCmd {/usr/bin/ffmpeg -nostdin -y -r 60 -f image2 -s 640x480 -i /data/pabellon/images/frame_%04d.png -vcodec libx264 -crf 25  -pix_fmt yuv420p /data/pabellon/pabellon.mp4} -service {PixarRender}
     }
 }
