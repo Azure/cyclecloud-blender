@@ -11,6 +11,6 @@ Job -title {Blender Classromm} -subtasks {
 
 
     } -cmds {
-        RemoteCmd {/usr/bin/convert -antialias -delay 1x2 -format mp4 -resize "640x480!" /data/classroom/images/*png /data/classroom/classroom.mp4} -service {PixarRender}
+        RemoteCmd {/usr/bin/ffmpeg -r 60 -f image2 -s '640x480' -i /data/classroom/images/frame_%04d.png -vcodec libx264 -crf 25  -pix_fmt yuv420p /data/classroom/classroom.mp4} -service {PixarRender}
     }
 }
