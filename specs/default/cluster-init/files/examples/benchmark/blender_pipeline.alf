@@ -1,0 +1,16 @@
+Job -title {Blender Benchmark} -subtasks {
+
+    Task {Benchmark Animation} -subtasks {
+
+        Iterate {FrameId}  -from  0 -to 9  -by  1  -template  {
+            Task {Frame $FrameId} -cmds {
+                RemoteCmd {/usr/local/blender/blender -b /data/benchmark/benchmark.blend -o /data/benchmark/images/frame_ -f $FrameId} -service {PixarRender}
+            }
+
+        } 
+
+
+    } -cmds {
+        RemoteCmd {/usr/bin/convert -antialias -delay 1x2 -format mp4 -resize "640x480!" /data/benchmark/images/*png /data/benchmark/benchmark.mp4} -service {PixarRender}
+    }
+}

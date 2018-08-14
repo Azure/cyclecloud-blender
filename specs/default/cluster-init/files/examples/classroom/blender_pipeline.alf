@@ -1,0 +1,16 @@
+Job -title {Blender Classromm} -subtasks {
+
+    Task {Classroom Animation} -subtasks {
+
+        Iterate {FrameId}  -from  0 -to 9  -by  1  -template  {
+            Task {Frame $FrameId} -cmds {
+                RemoteCmd {/usr/local/blender/blender -b /data/classroom/classroom.blend -o /data/classroom/images/frame_ -f $FrameId} -service {PixarRender}
+            }
+
+        }
+
+
+    } -cmds {
+        RemoteCmd {/usr/bin/convert -antialias -delay 1x2 -format mp4 -resize "640x480!" /data/classroom/images/*png /data/classroom/classroom.mp4} -service {PixarRender}
+    }
+}

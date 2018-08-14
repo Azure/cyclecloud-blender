@@ -1,0 +1,16 @@
+Job -title {Pabellon} -subtasks {
+
+    Task {Pabellon Animation} -subtasks {
+
+        Iterate {FrameId}  -from  0 -to 9  -by  1  -template  {
+            Task {Frame $FrameId} -cmds {
+                RemoteCmd {/usr/local/blender/blender -b /data/pabellon/pabellon.blend -o /data/pabellon/images/frame_ -f $FrameId} -service {PixarRender}
+            }
+
+        } 
+
+
+    } -cmds {
+        RemoteCmd {/usr/bin/convert -antialias -delay 1x2 -format mp4 -resize "640x480!" /data/pabellone/images/*png /data/pabellon/pabellon.mp4} -service {PixarRender}
+    }
+}
