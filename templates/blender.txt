@@ -155,7 +155,7 @@ Order = 10
        Config.Plugin = pico.form.QueryDropdown
        Config.Query = select ClusterName as Name from Cloud.Node where cluster().IsTemplate isnt true && Configuration.role=?="sharedfs"
        Config.SetDefault = false
-       Config.Required = true
+       Required = true
 
        [[[parameter MountPoint]]]
        Label = Mount Point
