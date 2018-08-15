@@ -150,7 +150,7 @@ Order = 10
     Order = 50
 
        [[[parameter FileSystemClusterName]]]
-       Label = Filesystem Cluster
+       Label = NFS Cluster
        Description = The filesystem to mount
        Config.Plugin = pico.form.QueryDropdown
        Config.Query = select ClusterName as Name from Cloud.Node where cluster().IsTemplate isnt true && Configuration.role=?="sharedfs"
