@@ -198,6 +198,7 @@ defaultvalue = 2.79b-linux-glibc219-x86_64
         ParameterType = Cloud.Image
         Config.OS = linux
         DefaultValue = cycle.image.ubuntu16
+        Config.Filter := Package in {"cycle.image.centos7", "cycle.image.ubuntu16"}
 
         [[[parameter MasterClusterInitSpecs]]]
         Label = Master Cluster-Init
